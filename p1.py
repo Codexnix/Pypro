@@ -646,3 +646,138 @@ order2.place_order("Order B")
 
 
 #--------------------------OOPS (END)---------------------------------------#
+
+
+# Some basics left [tuples and sets]
+
+# TUPLES [ordered,immutable,fixed data use]
+
+t= (1,2,3,4,5)
+
+# single element tuple comma mandatory
+t1= (1,)
+
+# Tuple operations
+
+print(len(t1))
+print(t[0])
+print(t.count(1))
+print(t.index(3))
+
+
+#Tuple Unpacking
+
+a,b = (10,20)
+x,y,z=(1,2,3)
+
+# SETS [unordered ,no duplicates , mutable]
+
+s= {1,2,3}
+
+# set operations
+
+s.add(4)
+s.remove(2)
+s.discard(10)  #no error
+
+
+# Mathmatical Set OPS (placment based)
+
+a={1,2,3}
+b={3,4,5}
+
+print(a | b )  # union
+print(a & b )  # intersection
+print(a - b )  # difference
+
+# ---------------FILE HANDLING----------------------------
+
+# important for logs,data storage ,backend apps very useful,automation scripts
+
+# MODES
+
+#  "r" → read
+
+#  "w" → write (overwrite)
+
+#  "a" → append
+
+#  "rb" → binary
+
+
+# Open a file
+
+file = open('text.txt', 'w+')
+
+# Read a file
+
+file.read()
+file.readline()
+file.readlines()
+
+# Write a file
+
+file.write("Hello ,  hi there my name is Rosh \nNice to meeet you")
+
+#Close a file
+
+file.close()    # DONT EVER FOREGT THIS CHANCES OF MEMORY LEAK
+
+# WITH KEYWORD BEST PRACTICE
+
+# Proper interview style
+
+with open('k.txt','r+') as f:
+    content = f.readlines()
+    f.write("Hello ,  hi there my name is Rosh ")
+    for i in content:
+        print(i)
+
+
+
+# MOdules
+# TO CREATE THIS AS AN MODULE I NEED TO SAVE MY MODULE FIRST IN THIS DIRECTORY
+#BELOW IS THE CODE OF MODULE THEN WE PRACTICE IT 
+
+# def add(a,b):
+#     return a+b
+# def sub(a,b):
+#     return a-b
+# def mul(a,b):
+#     return a*b
+# def div(a,b):
+#     return a / b
+
+# I WILL SAVE THIS AS mathops [math operations]
+ 
+
+# IMPORT MATHSOPS
+
+import mathops as m
+
+print(m.add(10,20))
+
+# DIRECT IMPORT OF OPERATION
+
+from mathops import add
+
+print(add(10,20))
+
+# PACKAGE 
+
+# a folder containing modules
+
+# NOW i created a package(mypackage) containing two modules(listops,mathreq)
+# 
+# IMPORTING FROM PACKAGE
+
+from mypackage import mathreq as m
+from mypackage import listops as l
+
+print(m.add(10,20))
+
+l.append([1,2,4,5,6],20)
+
+# can also import it in shorter way 
+
+# from mypackage import mathreq,listops 
